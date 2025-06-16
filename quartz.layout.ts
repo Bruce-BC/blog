@@ -6,22 +6,19 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-    <script src="https://giscus.app/client.js"
-        data-repo="Bruce-BC/blog"
-        data-repo-id="R_kgDOO50Nhw"
-        data-category="General"
-        data-category-id="DIC_kwDOO50Nh84Cri2W"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="ko"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-    </script>
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        // data-repo
+        repo: 'Bruce-BC/blog',
+        // data-repo-id
+        repoId: 'R_kgDOO50Nhw',
+        // data-category
+        category: 'General',
+        // data-category-id
+        categoryId: 'DIC_kwDOO50Nh84Cri2W',
+      }
+    }),
   ],
   footer: Component.Footer({
     links: {
